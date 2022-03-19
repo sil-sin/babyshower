@@ -1,0 +1,24 @@
+.nav {
+    border-bottom: outset rgb(0, 140, 255);
+    background:linear-gradient(rgb(20, 149, 255),#9dd7ec, #7bc6f1);
+    box-shadow: rgb(20, 149, 255) 0px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: large;
+    padding: 10px;
+}
+
+.nav a,
+.nav li {
+    text-decoration: none;
+    list-style: none;
+    color: rgb(0, 0, 0);
+    text-shadow: violet 2px 2px 2px, burlywood -2px -1px 2px;
+    padding: 5px 10px;
+}
+.llamaimg{
+    height: 2.5em;
+}

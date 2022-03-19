@@ -1,0 +1,73 @@
+.wishes {
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 60vh;
+    min-width: 200px;
+    background: linear-gradient(45deg, #fcfcfc, #efc6ff, #aed9e9, #d3faf1);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    border: thin;
+    border-radius: 10px;
+    box-shadow: rgba(144, 144, 224, 0.425) 2px 2px 20px, rgba(144, 144, 224, 0.384) 10px -10px 10px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    min-height: 40%;
+    align-items: flex-start;
+    text-align: start;
+    margin: 0 10px;
+
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-form input ,.post-form textarea {
+    margin: 10px;
+    padding: 10px;
+    border: thin;
+    border-radius: 5px;
+}
+
+#message {
+    width: auto;
+    height: 40px;
+}
+.post{
+    word-break: break-all;
+    margin: 0 10px;
+}
+.post-from{
+    margin-bottom: 0;
+}
+
+@media screen and (max-width:500px) {
+    .wishes{
+        width: 100%;
+      }
+    
+}

@@ -1,0 +1,89 @@
+.rsvp {
+    margin: 20px;
+    padding: 10px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50vh;
+    min-width: 200px;
+    background: linear-gradient(45deg, #fcfcfc, #efc6ff, #aed9e9, #d3faf1);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    border: thin;
+    border-radius: 10px;
+    box-shadow: rgba(144, 144, 224, 0.425) 2px 2px 20px, rgba(144, 144, 224, 0.384) 10px -10px 10px;
+
+
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.rsvp label {
+    font-weight: 500;
+    margin: 10px;
+}
+
+.rsvp input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px gray solid;
+}
+
+input::placeholder {
+    font-size: 14px;
+}
+
+.rsvp button {
+    margin: 20px;
+}
+
+#error,
+#success {
+    justify-self: center;
+    padding: 3px 30px 0 30px;
+    margin: 20px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+#error {
+    border: rgb(228, 62, 62) solid 1px;
+    box-sizing: border-box;
+    background-color: rgba(255, 89, 139, 0.432);
+}
+#success {
+    border: rgb(0, 255, 55) solid 1px;
+    box-sizing: border-box;
+    background-color: rgba(108, 255, 89, 0.432);
+}
+select{
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px gray solid;
+}
+@media(max-width:700px){.rsvp a {
+display: none;
+}}
