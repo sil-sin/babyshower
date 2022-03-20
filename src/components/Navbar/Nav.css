@@ -1,6 +1,6 @@
 .nav {
     border-bottom: outset rgb(0, 140, 255);
-    background:linear-gradient(rgb(20, 149, 255),#9dd7ec, #7bc6f1);
+    background: linear-gradient(rgb(20, 149, 255), #9dd7ec, #7bc6f1);
     box-shadow: rgb(20, 149, 255) 0px 10px 10px;
     display: flex;
     align-items: center;
@@ -9,6 +9,9 @@
     letter-spacing: 1px;
     font-size: large;
     padding: 10px;
+    position: absolute;
+    right: 0;
+    left: 0;
 }
 
 .nav a,
@@ -19,6 +22,20 @@
     text-shadow: violet 2px 2px 2px, burlywood -2px -1px 2px;
     padding: 5px 10px;
 }
-.llamaimg{
+
+.llamaimg {
     height: 2.5em;
+}
+
+.logout {
+    float: right;
+    order: 10;
+    cursor:pointer
+}
+@media(max-width:700px) {
+
+    .nav >*{
+    max-width: fit-content;
+        font-size: small;
+    }
 }

@@ -57,10 +57,10 @@ function Rsvp() {
     <div className="rsvp">
       <h2>RSVP</h2>
       <a
-        target="_blank"
+        target="_blank" rel="noreferrer noopener"
         href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=M2tycWo4MTg4ZDYwaW5zY3NmNTU4dmszbmUgc2lsdmliZXJhdEBt&amp;tmsrc=silviberat%40gmail.com"
       >
-        <img
+        <img alt="google"
           border="0"
           src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"
         />

@@ -11,7 +11,7 @@ export default function Header(props) {
       </div>
     
       <div>
-        <img className="headerimg" src="./logo512.png"></img>
+        <img className="headerimg" src="./logo512.png" alt='headerimg'></img>
       </div>
 
     </div>

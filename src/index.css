@@ -31,8 +31,8 @@ button:disabled{
 
 }
 .homepage{
-  width: 70%;
-  align-self: center;
+  padding-top: 100px;
+  align-self: stretch;
 }
 .section{
   display: flex;
@@ -40,9 +40,7 @@ button:disabled{
   flex-wrap: wrap;
 }
 @media screen and (max-width: 500px) {
-  .homepage{
-    width: 100%;
-    align-self: center;
-  }
- 
+ :root{
+   max-width: 100vw;
+ }
 }

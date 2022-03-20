@@ -77,4 +77,10 @@ ul {
     .giftimg {
         max-width: 80px;
     }
+    .gift-list{
+        max-width: 90vw;
+    }
+}
+button{
+    cursor: pointer;
 }

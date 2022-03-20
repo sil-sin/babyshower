@@ -6,7 +6,7 @@ export default function Wishes() {
     const [wishes, setWishes] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:5005/api/wishes")
+        axios.get(`${config.API_URL}/wishes`)
             .then((result) => {
                 console.log(result.data)
                 setWishes(result.data)
@@ -20,7 +20,7 @@ export default function Wishes() {
         e.preventDefault()
        let message = e.target.message.value
         let name =e.target.name.value
-        axios.post(`http://${config.API_URL}/api/wishes`, ({name,message}))
+        axios.post(`${config.API_URL}/wishes`, ({name,message}))
         .then((result) => {
             console.log('success')
             window.location.reload(true);

@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row !important;
+    background-color: beige;
+    flex-wrap: wrap;
+    margin: 10px;
+    min-height: 300px;
+}
+
+.headerimg {
+    width: 250px;
+    height: 250px;
+    background-color: black;
+}
