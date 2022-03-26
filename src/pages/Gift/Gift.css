@@ -91,6 +91,7 @@ ul {
         white-space: nowrap;
         font-size: 10px;
         align-self: flex-end;
+        
     }
 
     .giftimg {
@@ -102,8 +103,10 @@ ul {
     .gift-list {
         max-width: 90vw;
     }
+   
 }
 
 button {
     cursor: pointer;
+    white-space: nowrap;
 }

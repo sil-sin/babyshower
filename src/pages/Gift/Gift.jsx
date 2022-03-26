@@ -56,14 +56,14 @@ export default function Gift() {
         Let’s be honest, we know most of our friends are not experts in baby
         stuff.
         <br />
-        To make it easy and stress-free for you, we create this baby gift list
+        To make it easy and stress-free for you, we created this baby gift list
         with our favorites.
         <br />
         <br />
         Thank you! &#128522;
         <br />
         <br />
-        Once you purchase something from the list, please click{" "}
+        If you purchase something from the list, please click{" "}
         <i>“I’m taking this!”</i>, to cross the item off the list and avoid
         double purchases.<br/>
     
@@ -92,7 +92,7 @@ export default function Gift() {
                       Shop link  <img className="shopIcon" src=".\cart-icon.png"/>
                     </a>
                   </div>
-                  <button value={e._id} type="submit">
+                  <button value={e._id} type="submit" disabled>
                     Taken
                   </button>
                 </li>
