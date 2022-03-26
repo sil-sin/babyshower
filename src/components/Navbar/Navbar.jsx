@@ -16,7 +16,7 @@ const Navbar = (props) => {
             <Link to={PATHS.GIFTS} className="navLink">
               Gifts
             </Link>
-            <Link to={''} className="navlink" onClick={props.handleLogout}>
+            <Link to={''} className="navlink logout" onClick={props.handleLogout}>
               Logout
             </Link>
           </>

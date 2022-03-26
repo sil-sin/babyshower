@@ -9,10 +9,10 @@
     letter-spacing: 1px;
     font-size: large;
     padding: 10px;
-    position: absolute;
+    position: relative;
     right: 0;
     left: 0;
-    top:0;
+    top: 0;
 }
 
 .nav a,
@@ -29,14 +29,16 @@
 }
 
 .logout {
-    float: right;
-    order: 10;
-    cursor:pointer
+    position: absolute;
+    right: 20px;
 }
-@media(max-width:700px) {
 
-    .nav >*{
-    max-width: fit-content;
+@media(max-width:700px) {
+.nav{
+    margin-bottom: 10px;
+}
+    .nav>* {
+        max-width: fit-content;
         font-size: small;
     }
 }

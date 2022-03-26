@@ -55,7 +55,7 @@ function Rsvp() {
 
   return (
     <div className="rsvp">
-      <h2>RSVP</h2>
+      <h3>RSVP</h3>
       <a
         target="_blank" rel="noreferrer noopener"
         href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=M2tycWo4MTg4ZDYwaW5zY3NmNTU4dmszbmUgc2lsdmliZXJhdEBt&amp;tmsrc=silviberat%40gmail.com"
@@ -80,7 +80,7 @@ function Rsvp() {
           type="text"
           placeholder="Last Name"
         />
-        <h4>Are you coming?</h4>
+        <label>Are you coming?</label>
         <select onChange={handleChange} id="coming" name="coming">
           <option disabled selected>
             Your Answer
@@ -88,7 +88,7 @@ function Rsvp() {
           <option value="coming">Yes</option>
           <option value="not coming">No</option>
         </select>
-        <h4 for="plusOne">Are you bringing a +1?</h4>
+        <label for="plusOne">Are you bringing a +1?</label>
         <select onChange={handleChange} id="plusOne" name="plusOne">
           <option disabled selected>
             Your Answer

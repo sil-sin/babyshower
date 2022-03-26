@@ -35,7 +35,7 @@ export default function Wishes() {
             <form onSubmit={postWish} className='post-form' method="post">
                 <label for="name">Your name </label>
                 <input type="text" name="name" id="name" placeholder='Your name here' />
-                <label for='message'>You message to Liam</label>
+                <label for='message'>Your message to Liam</label>
                 <input  type="text" name="message" id="message" placeholder='What do you wish for Liam' />
                 <button type="submit">Post</button>
             </form>
@@ -43,8 +43,8 @@ export default function Wishes() {
                 {
                     wishes && wishes.map(wish => {
                         return <div>
-                            <h5 className="post-from">{wish.name}:</h5>
-                            <p className='post'>"{wish.message}"</p>
+                            <h5 className="post-from">{wish.name} :</h5>
+                            <p className='post'>{wish.message}</p>
                         </div>
                     })
                 }

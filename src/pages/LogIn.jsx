@@ -37,10 +37,9 @@ export default function LogIn({ authenticate }) {
   }
 
   return (
-    <div className=".auth__form ">
-      <h1>Log In</h1>
+    <div className="authform">
       <form onSubmit={handleFormSubmission} className="signup__form">
-        <label htmlFor="input-password">Password</label>
+        <label htmlFor="input-password"></label>
         <input
           id="input-password"
           type="password"
@@ -60,7 +59,7 @@ export default function LogIn({ authenticate }) {
         )}
 
         <button className="button__submit" type="submit">
-          Submit
+          Log In
         </button>
       </form>
     </div>

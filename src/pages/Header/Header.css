@@ -2,14 +2,29 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: row !important;
+    align-items: center;
     background-color: beige;
     flex-wrap: wrap;
     margin: 10px;
     min-height: 300px;
+    max-width: 97vw;
+    background: linear-gradient(45deg, #efd7f8,#b3d7e4, #efd7f8, #b3d7e4, #efd7f8);
+    border-radius: 10px;
 }
+@keyframes gradient {
+    0% {
+        background-position: 0% 40%;
+    }
 
+    50% {
+        background-position: 100% 60%;
+    }
+
+    100% {
+        background-position: 0% 40%;
+    }
+}
 .headerimg {
-    width: 250px;
+    width: 350px;
     height: 250px;
-    background-color: black;
 }

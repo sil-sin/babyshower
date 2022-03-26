@@ -1,15 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import config from "../../config";
 import "./Gift.css";
+import LoadingComponent from "../../components/Loading";
 export default function Gift() {
   const [list, setList] = useState([]);
-  const[fetchin,setFetching]=useState(true)
+  const [fetchin, setFetching] = useState(true);
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
       .then((result) => {
         setList(result.data);
-        setFetching(false)
+        setFetching(false);
       })
       .catch((err) => {
         console.log("error", err);
@@ -22,7 +23,10 @@ export default function Gift() {
     let value = event.target.children[0].value;
     if (value === 0) {
       axios
-        .post(`${process.env.REACT_APP_SERVER_URL}/taken`, { _id, taken: false })
+        .post(`${process.env.REACT_APP_SERVER_URL}/taken`, {
+          _id,
+          taken: false,
+        })
         .then((result) => {
           console.log(result.data.taken);
           window.location.reload();
@@ -42,13 +46,33 @@ export default function Gift() {
         });
     }
   };
-  if(fetchin){
-    <p>Loading</p>
+  if (fetchin) {
+    <LoadingComponent />;
   }
   return (
     <div className="giftBox">
-      <h1>Gifts</h1>
 
+      <div className="giftInfo">
+        Let’s be honest, we know most of our friends are not experts in baby
+        stuff.
+        <br />
+        To make it easy and stress-free for you, we create this baby gift list
+        with our favorites.
+        <br />
+        <br />
+        Thank you! &#128522;
+        <br />
+        <br />
+        Once you purchase something from the list, please click{" "}
+        <i>“I’m taking this!”</i>, to cross the item off the list and avoid
+        double purchases.<br/>
+    
+          If you prefer to send it to us directly to our home address:
+          <br />
+          Gisele Russano / Silvi Sinanaj <br />
+          Urbanstr. 6 - Berlin 10961
+        
+      </div>
       <ul>
         {list.map((e) => {
           return (
@@ -65,7 +89,7 @@ export default function Gift() {
                   <div className="gift-details">
                     <h5 className="disable giftname">{e.gift}</h5>
                     <a href={e.link} target="_blank" rel="noreferrer noopener">
-                      Shop link
+                      Shop link  <img className="shopIcon" src=".\cart-icon.png"/>
                     </a>
                   </div>
                   <button value={e._id} type="submit">
@@ -73,18 +97,15 @@ export default function Gift() {
                   </button>
                 </li>
               ) : (
-                <li
-                  value={1}
-                  className="gift-list activelist"
-                >
+                <li value={1} className="gift-list activelist">
                   <img alt={e.gift} src={e.picture} className="giftimg" />
                   <div className="gift-details">
                     <h5 className="giftname">{e.gift}</h5>
-                    <a rel="noreferrer noopener"  href={e.link} target="_blank">
-                      Shop link
+                    <a rel="noreferrer noopener" href={e.link} target="_blank">
+                      Shop link  <img className="shopIcon" src=".\cart-icon.png"/>
                     </a>
                   </div>
-                  <button type="submit">Purchase Gift</button>
+                  <button type="submit">I’m taking this!</button>
                 </li>
               )}
             </form>
