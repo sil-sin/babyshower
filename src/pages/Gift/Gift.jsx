@@ -45,6 +45,7 @@ const[error, setError]=useState(false)
         window.location.reload();
       })
         .catch((err) => {
+          setError(true)
           console.log(err);
         });
     }
@@ -76,8 +77,8 @@ const[error, setError]=useState(false)
           Urbanstr. 6 - Berlin 10961
         
       </div>
-      {error&&<div>Gift is Taken</div>}
       <ul>
+      {error&& <div className="error">Somebody just took this gift. Please refresh the page and try another!</div> }
         {list.map((e) => {
           return (
             <form
