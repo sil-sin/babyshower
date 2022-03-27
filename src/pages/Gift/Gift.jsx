@@ -2,9 +2,10 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Gift.css";
 import LoadingComponent from "../../components/Loading";
-export default function Gift() {
+export default function Gift(props) {
   const [list, setList] = useState([]);
   const [fetchin, setFetching] = useState(true);
+const[error, setError]=useState(false)
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
@@ -15,7 +16,7 @@ export default function Gift() {
       .catch((err) => {
         console.log("error", err);
       });
-  }, []);
+  }, [list]);
   const removeGift = (event) => {
     event.preventDefault();
     let _id = event.target.name;
@@ -35,12 +36,27 @@ export default function Gift() {
           console.log(err);
         });
     } else {
+      setFetching(true)
       axios
-        .post(`${process.env.REACT_APP_SERVER_URL}/taken`, { _id, taken: true })
-        .then((result) => {
-          console.log(result.data);
-          window.location.reload();
-        })
+      .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
+      .then((result) => {
+        setList(result.data);
+        setFetching(false);
+    const thisGift =result.data.filter(d=>d._id===_id)[0]
+  
+     if(thisGift.taken===false){
+       console.log(thisGift.taken)
+      axios
+      .post(`${process.env.REACT_APP_SERVER_URL}/taken`, { _id, taken: true })
+      .then((result) => {
+        console.log(result.data);
+        window.location.reload();
+      })
+     }else{
+       console.warn('already taken')
+       setError(true)
+     }
+      })
         .catch((err) => {
           console.log(err);
         });
@@ -73,6 +89,7 @@ export default function Gift() {
           Urbanstr. 6 - Berlin 10961
         
       </div>
+      {error&&<div>Gift is Taken</div>}
       <ul>
         {list.map((e) => {
           return (
@@ -92,7 +109,7 @@ export default function Gift() {
                       Shop link  <img className="shopIcon" src=".\cart-icon.png"/>
                     </a>
                   </div>
-                  <button value={e._id} type="submit" disabled>
+                  <button value={e._id} type="submit"  disabled>
                     Taken
                   </button>
                 </li>

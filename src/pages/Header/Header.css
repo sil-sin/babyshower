@@ -9,7 +9,8 @@
     min-height: 300px;
     max-width: 97vw;
     background: linear-gradient(45deg, #efd7f8,#b3d7e4, #efd7f8, #b3d7e4, #efd7f8);
-    border-radius: 10px;
+    border-radius: 10px; 
+    padding: 10px;
 }
 @keyframes gradient {
     0% {
