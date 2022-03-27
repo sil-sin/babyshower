@@ -6,7 +6,7 @@ export default function Gift(props) {
   const [list, setList] = useState([]);
   const [fetchin, setFetching] = useState(true);
   const [error, setError] = useState(false);
-  
+
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
@@ -23,7 +23,7 @@ export default function Gift(props) {
     let _id = event.target.name;
     let value = event.target.children[0].value;
    const isTaken = list.filter(gift=>gift._id===_id)[0].taken
-
+if (!isTaken){
       if (value === 0) {
       axios
         .post(`${process.env.REACT_APP_SERVER_URL}/taken`, {
@@ -53,6 +53,8 @@ export default function Gift(props) {
           setError(true);
           console.log(err);
         });
+    }}else{
+      setError(true)
     }
     
    
