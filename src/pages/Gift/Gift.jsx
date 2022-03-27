@@ -6,18 +6,19 @@ export default function Gift() {
   const [list, setList] = useState([]);
   const [fetchin, setFetching] = useState(true);
   const [error, setError] = useState(false);
-  const [isTaken, setIsTaken] = useState(false);
+  const [isTaken,setIsTaken ] = useState(false);
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
       .then((result) => {
+        console.log(isTaken)
         setList(result.data);
         setFetching(false);
         axios
       .get(`${process.env.REACT_APP_SERVER_URL}/taken`)
       .then((result) => {
         setList(result.data);
-        console.log(result.data)
+        setIsTaken(result.data)
         setFetching(false);
       })
       })
@@ -25,7 +26,7 @@ export default function Gift() {
         console.log("error", err);
       });
       
-  }, []);
+  }, [isTaken]);
 
   const removeGift = (event) => {
     event.preventDefault();
