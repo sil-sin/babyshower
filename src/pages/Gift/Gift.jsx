@@ -24,7 +24,7 @@ export default function Gift() {
       .catch((err) => {
         console.log("error", err);
       });
-  }, [isTaken]);
+  }, []);
 
   const removeGift = (event) => {
     event.preventDefault();
