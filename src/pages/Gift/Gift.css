@@ -42,11 +42,12 @@
 }
 
 .giftInfo {
+    margin-top: 30px;
     background: whitesmoke;
     border: 3px solid rgba(255, 196, 0, 0.719);
     border-radius: 5px;
     padding: 10px;
-    max-width: 856px;
+    max-width: 845px;
 }
 
 i {

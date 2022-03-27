@@ -104,7 +104,7 @@ export default function Gift(props) {
                       <img className="shopIcon" src=".\cart-icon.png" />
                     </a>
                   </div>
-                  <button value={e._id} type="submit" disabled>
+                  <button value={e._id} type="submit" >
                     Taken
                   </button>
                 </li>
