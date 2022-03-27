@@ -6,25 +6,24 @@ export default function Gift() {
   const [list, setList] = useState([]);
   const [fetchin, setFetching] = useState(true);
   const [error, setError] = useState(false);
-  const [isTaken,setIsTaken ] = useState(false);
+  const [isTaken, setIsTaken] = useState(false);
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
       .then((result) => {
-        console.log(isTaken)
+        console.log(isTaken);
         setList(result.data);
         setFetching(false);
         axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/taken`)
-      .then((result) => {
-        setIsTaken(result.data)
-        setFetching(false);
-      })
+          .get(`${process.env.REACT_APP_SERVER_URL}/taken`)
+          .then((result) => {
+            setIsTaken(result.data);
+            setFetching(false);
+          });
       })
       .catch((err) => {
         console.log("error", err);
       });
-      
   }, [isTaken]);
 
   const removeGift = (event) => {
@@ -32,6 +31,9 @@ export default function Gift() {
 
     let _id = event.target.name;
     let value = event.target.children[0].value;
+    if (isTaken) {
+      setError(true);
+    } else {
       if (value === 0) {
         axios
           .post(`${process.env.REACT_APP_SERVER_URL}/taken`, {
@@ -41,7 +43,7 @@ export default function Gift() {
           .then((result) => {
             console.log(result.data.taken);
             setTimeout(function () {
-               window.location.reload();
+              window.location.reload();
             });
           })
           .catch((err) => {
@@ -65,7 +67,8 @@ export default function Gift() {
             console.log(err);
           });
       }
-    };
+    }
+  };
   if (fetchin) {
     <LoadingComponent />;
   }
