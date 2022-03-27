@@ -5,7 +5,7 @@ import LoadingComponent from "../../components/Loading";
 export default function Gift(props) {
   const [list, setList] = useState([]);
   const [fetchin, setFetching] = useState(true);
-const[error, setError]=useState(false)
+  const [error, setError] = useState(false);
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
@@ -30,22 +30,25 @@ const[error, setError]=useState(false)
         })
         .then((result) => {
           console.log(result.data.taken);
-          window.location.reload();
+          setTimeout(function () {
+            window.location.reload();
+          });
         })
         .catch((err) => {
-          setError(true)
+          setError(true);
           console.log(err);
         });
     } else {
-      
       axios
-      .post(`${process.env.REACT_APP_SERVER_URL}/taken`, { _id, taken: true })
-      .then((result) => {
-        console.log(result.data);
-        window.location.reload();
-      })
+        .post(`${process.env.REACT_APP_SERVER_URL}/taken`, { _id, taken: true })
+        .then((result) => {
+          console.log(result.data);
+          setTimeout(function () {
+            window.location.reload();
+          });
+        })
         .catch((err) => {
-          setError(true)
+          setError(true);
           console.log(err);
         });
     }
@@ -55,7 +58,6 @@ const[error, setError]=useState(false)
   }
   return (
     <div className="giftBox">
-
       <div className="giftInfo">
         Let’s be honest, we know most of our friends are not experts in baby
         stuff.
@@ -69,16 +71,20 @@ const[error, setError]=useState(false)
         <br />
         If you purchase something from the list, please click{" "}
         <i>“I’m taking this!”</i>, to cross the item off the list and avoid
-        double purchases.<br/>
-    
-          If you prefer to send it to us directly to our home address:
-          <br />
-          Gisele Russano / Silvi Sinanaj <br />
-          Urbanstr. 6 - Berlin 10961
-        
+        double purchases.
+        <br />
+        If you prefer to send it to us directly to our home address:
+        <br />
+        Gisele Russano / Silvi Sinanaj <br />
+        Urbanstr. 6 - Berlin 10961
       </div>
       <ul>
-      {error&& <div className="error">Somebody just took this gift. Please refresh the page and try another!</div> }
+        {error && (
+          <div className="error">
+            Somebody just took this gift. Please refresh the page and try
+            another!
+          </div>
+        )}
         {list.map((e) => {
           return (
             <form
@@ -94,10 +100,11 @@ const[error, setError]=useState(false)
                   <div className="gift-details">
                     <h5 className="disable giftname">{e.gift}</h5>
                     <a href={e.link} target="_blank" rel="noreferrer noopener">
-                      Shop link  <img className="shopIcon" src=".\cart-icon.png"/>
+                      Shop link{" "}
+                      <img className="shopIcon" src=".\cart-icon.png" />
                     </a>
                   </div>
-                  <button value={e._id} type="submit"  disabled>
+                  <button value={e._id} type="submit" disabled>
                     Taken
                   </button>
                 </li>
@@ -107,7 +114,8 @@ const[error, setError]=useState(false)
                   <div className="gift-details">
                     <h5 className="giftname">{e.gift}</h5>
                     <a rel="noreferrer noopener" href={e.link} target="_blank">
-                      Shop link  <img className="shopIcon" src=".\cart-icon.png"/>
+                      Shop link{" "}
+                      <img className="shopIcon" src=".\cart-icon.png" />
                     </a>
                   </div>
                   <button type="submit">I’m taking this!</button>

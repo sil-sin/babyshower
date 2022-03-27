@@ -65,7 +65,6 @@ export default function Signup({ authenticate }) {
           value={password}
           onChange={handleInputChange}
           required
-          minLength="8"
         />
 
         {error && (
