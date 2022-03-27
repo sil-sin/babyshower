@@ -17,7 +17,6 @@ export default function Gift() {
         axios
       .get(`${process.env.REACT_APP_SERVER_URL}/taken`)
       .then((result) => {
-        setList(result.data);
         setIsTaken(result.data)
         setFetching(false);
       })
