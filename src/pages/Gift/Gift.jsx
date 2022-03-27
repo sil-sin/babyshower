@@ -85,14 +85,27 @@ export default function Gift() {
         Thank you! &#128522;
         <br />
         <br />
-        If you purchase something from the list, please click{" "}
-        <i>“I’m taking this!”</i>, to cross the item off the list and avoid
-        double purchases.
+        Let’s be honest, we know most of our friends are not experts in baby
+        stuff.
         <br />
-        If you prefer to send it to us directly to our home address:
+        To make it easy and stress-free for you, we created this baby gift list
+        with our favorites.
+        <br />
+        <br />
+        Thank you! 😊
+        <br />
+        <br />
+        <b>Practical information:</b>
+        <br />
+        -If you purchase something from the list, please click “I’m taking
+        this!” to cross the item off the list and avoid double purchases. <br />
+        -If you prefer to send it to us directly to our home address instead of
+        bringing it with you:
         <br />
         Gisele Russano / Silvi Sinanaj <br />
         Urbanstr. 6 - Berlin 10961
+        <br />
+        -If buying clothes, size should be between 56-68 (3-6 months)
       </div>
       <ul>
         {error && (
