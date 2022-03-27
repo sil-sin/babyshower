@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Gift.css";
 import LoadingComponent from "../../components/Loading";
-export default function Gift(props) {
+export default function Gift() {
   const [list, setList] = useState([]);
   const [fetchin, setFetching] = useState(true);
   const [error, setError] = useState(false);
@@ -20,9 +20,15 @@ export default function Gift(props) {
   });
   const removeGift = (event) => {
     event.preventDefault();
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
+    .then((result) => {
+      setList(result.data);
+      setFetching(false);
+    })
+
     let _id = event.target.name;
     let value = event.target.children[0].value;
-   const isTaken = list.filter(gift=>gift._id===_id)[0].taken
+   const isTaken =list.filter(gift=>gift._id===_id)[0].taken
 if (!isTaken){
       if (value === 0) {
       axios
@@ -42,22 +48,19 @@ if (!isTaken){
         });
     } else {
       axios
-        .post(`${process.env.REACT_APP_SERVER_URL}/taken`, { _id, taken: true })
-        .then((result) => {
-          console.log(result.data);
-          setTimeout(function () {
-            window.location.reload();
-          });
-        })
-        .catch((err) => {
-          setError(true);
-          console.log(err);
+      .post(`${process.env.REACT_APP_SERVER_URL}/taken`, { _id, taken: true })
+      .then((result) => {
+        console.log(result.data);
+        setTimeout(function () {
+          window.location.reload();
         });
-    }}else{
-      setError(true)
+      })
+      .catch((err) => {
+        setError(true);
+        console.log(err);
+      });
     }
-    
-   
+  }
   };
   if (fetchin) {
     <LoadingComponent />;
