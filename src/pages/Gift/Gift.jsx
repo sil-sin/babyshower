@@ -85,16 +85,6 @@ export default function Gift() {
         Thank you! &#128522;
         <br />
         <br />
-        Let’s be honest, we know most of our friends are not experts in baby
-        stuff.
-        <br />
-        To make it easy and stress-free for you, we created this baby gift list
-        with our favorites.
-        <br />
-        <br />
-        Thank you! 😊
-        <br />
-        <br />
         <b>Practical information:</b>
         <br />
         -If you purchase something from the list, please click “I’m taking
