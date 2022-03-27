@@ -16,7 +16,7 @@ const[error, setError]=useState(false)
       .catch((err) => {
         console.log("error", err);
       });
-  }, [list]);
+  }, []);
   const removeGift = (event) => {
     event.preventDefault();
     let _id = event.target.name;
@@ -33,29 +33,16 @@ const[error, setError]=useState(false)
           window.location.reload();
         })
         .catch((err) => {
+          setError(true)
           console.log(err);
         });
     } else {
-      setFetching(true)
-      axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
-      .then((result) => {
-        setList(result.data);
-        setFetching(false);
-    const thisGift =result.data.filter(d=>d._id===_id)[0]
-  
-     if(thisGift.taken===false){
-       console.log(thisGift.taken)
+      
       axios
       .post(`${process.env.REACT_APP_SERVER_URL}/taken`, { _id, taken: true })
       .then((result) => {
         console.log(result.data);
         window.location.reload();
-      })
-     }else{
-       console.warn('already taken')
-       setError(true)
-     }
       })
         .catch((err) => {
           console.log(err);
