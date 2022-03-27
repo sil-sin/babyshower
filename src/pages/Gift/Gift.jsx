@@ -6,62 +6,66 @@ export default function Gift() {
   const [list, setList] = useState([]);
   const [fetchin, setFetching] = useState(true);
   const [error, setError] = useState(false);
-
+  const [isTaken, setIsTaken] = useState(false);
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
       .then((result) => {
         setList(result.data);
         setFetching(false);
+        axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/taken`)
+      .then((result) => {
+        setList(result.data);
+        console.log(result.data)
+        setFetching(false);
+      })
       })
       .catch((err) => {
         console.log("error", err);
       });
-  });
+      
+  }, []);
+
   const removeGift = (event) => {
     event.preventDefault();
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
-    .then((result) => {
-      setList(result.data);
-      setFetching(false);
-    })
 
     let _id = event.target.name;
     let value = event.target.children[0].value;
-   const isTaken =list.filter(gift=>gift._id===_id)[0].taken
-if (!isTaken){
       if (value === 0) {
-      axios
-        .post(`${process.env.REACT_APP_SERVER_URL}/taken`, {
-          _id,
-          taken: false,
-        })
-        .then((result) => {
-          console.log(result.data.taken);
-          setTimeout(function () {
-            window.location.reload();
+        axios
+          .post(`${process.env.REACT_APP_SERVER_URL}/taken`, {
+            _id,
+            taken: false,
+          })
+          .then((result) => {
+            console.log(result.data.taken);
+            setTimeout(function () {
+               window.location.reload();
+            });
+          })
+          .catch((err) => {
+            setError(true);
+            console.log(err);
           });
-        })
-        .catch((err) => {
-          setError(true);
-          console.log(err);
-        });
-    } else {
-      axios
-      .post(`${process.env.REACT_APP_SERVER_URL}/taken`, { _id, taken: true })
-      .then((result) => {
-        console.log(result.data);
-        setTimeout(function () {
-          window.location.reload();
-        });
-      })
-      .catch((err) => {
-        setError(true);
-        console.log(err);
-      });
-    }
-  }
-  };
+      } else {
+        axios
+          .post(`${process.env.REACT_APP_SERVER_URL}/taken`, {
+            _id,
+            taken: true,
+          })
+          .then((result) => {
+            console.log(result.data);
+            setTimeout(function () {
+              window.location.reload();
+            });
+          })
+          .catch((err) => {
+            setError(true);
+            console.log(err);
+          });
+      }
+    };
   if (fetchin) {
     <LoadingComponent />;
   }
@@ -113,7 +117,7 @@ if (!isTaken){
                       <img className="shopIcon" src=".\cart-icon.png" />
                     </a>
                   </div>
-                  <button value={e._id} type="submit" >
+                  <button value={e._id} type="submit" disabled>
                     Taken
                   </button>
                 </li>

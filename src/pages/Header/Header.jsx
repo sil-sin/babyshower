@@ -10,7 +10,7 @@ export default function Header(props) {
           moment with our friends at his baby shower.
           <br />
           <br />
-          April 10th
+          April 9th
           <br />
           3 pm - 5 pm
           <br />
