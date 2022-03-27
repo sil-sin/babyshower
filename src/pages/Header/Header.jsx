@@ -27,6 +27,8 @@ export default function Header(props) {
           Please RSVP below.
           <br />
           Baby gift registry available <i>above</i>
+          <br />
+          Easy and quick way to do a Schnelltest before you come: Testzentrum Urbanstr. 1
         </p>
       </div>
 
