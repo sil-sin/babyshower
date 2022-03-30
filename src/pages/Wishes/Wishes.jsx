@@ -51,7 +51,7 @@ export default function Wishes() {
           id="message"
           placeholder="Sua mensagem para o Liam*"
         />
-        <button type="submit">Post</button>
+        <button type="submit">Enviar</button>
         {error && <div id="error">Please fill all the fields!</div>}
       </form>
       <div className="posts">

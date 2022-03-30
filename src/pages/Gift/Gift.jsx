@@ -75,27 +75,51 @@ export default function Gift() {
   return (
     <div className="giftBox">
       <div className="giftInfo">
-        Let’s be honest, we know most of our friends are not experts in baby
-        stuff.
-        <br />
-        To make it easy and stress-free for you, we created this baby gift list
-        with our favorites.
-        <br />
-        <br />
-        Thank you! &#128522;
-        <br />
-        <br />
-        <b>Practical information:</b>
-        <br />
-        -If you purchase something from the list, please click “I’m taking
-        this!” to cross the item off the list and avoid double purchases. <br />
-        -If you prefer to send it to us directly to our home address instead of
-        bringing it with you:
-        <br />
-        Gisele Russano / Silvi Sinanaj <br />
-        Urbanstr. 6 - Berlin 10961
-        <br />
-        -If buying clothes, size should be between 56-68 (3-6 months)
+        <p>
+          O mais importante para nós é que o chá de bebê virtual é uma
+          oportunidade de ver nossos amigos que estão longe, e compartilhar a
+          alegria deste momento com vocês.
+        </p>
+        <p>O presente realmente é opcional.</p>
+        <p>
+          Como estamos longe, a maneira mais fácil de presentear seria uma
+          compra online em uma das lojas daqui. Criamos uma lista com alguns
+          itens e o link para as lojas para facilitar.
+        </p>
+        <ul className="comoList">
+          Como comprar:
+          <li className="comoItems">
+           <b> -</b>  escolha um item da lista e clique em ‘shop link’
+          </li>
+          <li className="comoItems">
+           <b> -</b>  os sites estão em alemão, então aconselhamos usar o tradutor antes
+            de fazer a compra
+          </li>
+          <li className="comoItems">
+           <b> -</b>  as opções de pagamento provavelmente serão cartão de crédito
+            internacional ou Paypal, e o preço será em euro 😬
+          </li>
+          <li className="comoItems">
+           <b> -</b>  o endereço de entrega é:
+          </li>
+            <p>
+              Gisele Russano / Silvi Sinanaj <br />
+              (rua) Urbanstr. 6 <br />
+              (código postal) 10961
+              <br />
+              (cidade) Berlin
+            </p>
+          <li className="comoItems">
+           <b> -</b>  se decidir comprar um presente da lista, por favor volte para este
+            site e clique no botão ‘Comprei!’ para que o presente saia da lista
+            (e assim evitamos que duas pessoas comprem o mesmo presente)
+          </li>
+        </ul>
+        <p>
+          Muito complicado? Sem stress! Lembrem-se que o mais importante para
+          nós será a sua presença!{" "}
+        </p>
+        <p>Obrigado! 😊</p>
       </div>
       <ul>
         {error && (
@@ -124,7 +148,7 @@ export default function Gift() {
                     </a>
                   </div>
                   <button value={e._id} type="submit" disabled>
-                    Taken
+                    &#10004;
                   </button>
                 </li>
               ) : (
@@ -137,7 +161,7 @@ export default function Gift() {
                       <img className="shopIcon" src=".\cart-icon.png" />
                     </a>
                   </div>
-                  <button type="submit">I’m taking this!</button>
+                  <button type="submit">Comprei!</button>
                 </li>
               )}
             </form>
