@@ -10,18 +10,17 @@ const Navbar = (props) => {
         Home
       </Link>
       <img className="llamaimg" src="./llama.png" alt="llama" />
-      
-        {props.user && (
-          <>
-            <Link to={PATHS.GIFTS} className="navLink">
-              Gifts
-            </Link>
-            <Link to={''} className="navlink logout" onClick={props.handleLogout}>
-              Logout
-            </Link>
-          </>
-        ) }
-   
+
+      {props.user && (
+        <>
+          <Link to={PATHS.GIFTS} className="navLink">
+            Presentes
+          </Link>
+          <Link to={""} className="navlink logout" onClick={props.handleLogout}>
+            Logout
+          </Link>
+        </>
+      )}
     </nav>
   );
 };

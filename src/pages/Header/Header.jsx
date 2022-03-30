@@ -13,8 +13,10 @@ export default function Header(props) {
           com vocês.
           <br />
           <br />
+         <b> CHÁ DE BEBÊ VIRTUAL</b>
+          <br />
           Domingo, 10 de Abril
-          <br /> 11:00 (horário de Brasília)
+          <br /> 11:00 (BRT)
           <br /> <br />
           Zoom: <a href="http://">Link</a>
           <br />

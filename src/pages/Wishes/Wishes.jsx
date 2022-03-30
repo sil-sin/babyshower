@@ -42,14 +42,14 @@ export default function Wishes() {
     <div className="wishes">
       <h3>Wishes for baby Liam</h3>
       <form onSubmit={postWish} className="post-form" method="post">
-        <label for="name">Your name </label>
-        <input type="text" name="name" id="name" placeholder="Your name here" />
-        <label for="message">Your message to Liam</label>
+        <label for="name">Nome<i>*</i> </label>
+        <input type="text" name="name" id="name" placeholder="Nome*" />
+        <label for="message">Sua mensagem para o Liam<i>*</i></label>
         <input
           type="text"
           name="message"
           id="message"
-          placeholder="What do you wish for Liam"
+          placeholder="Sua mensagem para o Liam*"
         />
         <button type="submit">Post</button>
         {error && <div id="error">Please fill all the fields!</div>}
