@@ -56,47 +56,30 @@ function Rsvp() {
   return (
     <div className="rsvp">
       <h3>RSVP</h3>
-      <a
-        target="_blank" rel="noreferrer noopener"
-        href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=M2tycWo4MTg4ZDYwaW5zY3NmNTU4dmszbmUgc2lsdmliZXJhdEBt&amp;tmsrc=silviberat%40gmail.com"
-      >
-        <img alt="google"
-          border="0"
-          src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"
-        />
-      </a>
       <form className="form" onSubmit={handleSubmit}>
-        <label for="firstname">First Name</label>
+        <label for="firstname">Nome<i>*</i></label>
         <input
           onChange={handleChange}
           name="firstname"
           type="text"
-          placeholder="First Name"
+          placeholder="Nome*"
         />
-        <label for="firstname">Last Name</label>
+        <label for="lastname">Sobrenome<i>*</i></label>
         <input
           onChange={handleChange}
           name="lastname"
           type="text"
-          placeholder="Last Name"
+          placeholder="Sobrenome*"
         />
-        <label>Are you coming?</label>
+        <label>Você vai participar?</label>
         <select onChange={handleChange} id="coming" name="coming">
-          <option disabled selected>
-            Your Answer
-          </option>
-          <option value="coming">Yes</option>
-          <option value="not coming">No</option>
+          <option disabled selected style={{color:"green"}}>
+         Resposta
+        </option>
+          <option value="coming">Sim</option>
+          <option value="not coming">Não</option>
         </select>
-        <label for="plusOne">Are you bringing a +1?</label>
-        <select onChange={handleChange} id="plusOne" name="plusOne">
-          <option disabled selected>
-            Your Answer
-          </option>
-          <option value="bringing">Yes</option>
-          <option value="not bringing">No</option>
-        </select>
-        <button type="submit">Send</button>
+        <button type="submit">Enviar</button>
         {error && <div id="error">Please fill all the fields!</div>}
         {success && <div id="success">Message was sent succesfully</div>}
       </form>

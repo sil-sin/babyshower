@@ -5,8 +5,28 @@ export default function Header(props) {
   return (
     <div className="header">
       <div>
-       
-      OLA!
+        <p>
+          Queridos amigos,
+          <br />
+          <br />
+          O Liam está chegando, e queremos compartilhar este momento especial
+          com vocês.
+          <br />
+          <br />
+          Domingo, 10 de Abril
+          <br /> 11:00 (horário de Brasília)
+          <br /> <br />
+          Zoom: <a href="http://">Link</a>
+          <br />
+          <br />
+          Confirme sua presença e escreva uma mensagem para o Liam abaixo.
+          <br />
+          A lista de presentes está disponível no link acima.
+          <br />
+          <br />
+          <br />
+          Gi & Sil
+        </p>
       </div>
 
       <div>
