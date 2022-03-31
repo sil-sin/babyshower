@@ -39,12 +39,12 @@ export default function LogIn({ authenticate }) {
   return (
     <div className="authform">
       <form onSubmit={handleFormSubmission} className="signup__form">
-        <label htmlFor="input-password"></label>
+        <label htmlFor="input-password">Senha</label>
         <input
           id="input-password"
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder="Senha"
           value={password}
           onChange={handleInputChange}
           required
