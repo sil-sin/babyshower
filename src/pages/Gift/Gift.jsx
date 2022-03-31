@@ -74,76 +74,8 @@ export default function Gift() {
   }
   return (
     <div className="giftBox">
-      <div className="giftInfo">
-        Let’s be honest, we know most of our friends are not experts in baby
-        stuff.
-        <br />
-        To make it easy and stress-free for you, we created this baby gift list
-        with our favorites.
-        <br />
-        <br />
-        Thank you! &#128522;
-        <br />
-        <br />
-        <b>Practical information:</b>
-        <br />
-        -If you purchase something from the list, please click “I’m taking
-        this!” to cross the item off the list and avoid double purchases. <br />
-        -If you prefer to send it to us directly to our home address instead of
-        bringing it with you:
-        <br />
-        Gisele Russano / Silvi Sinanaj <br />
-        Urbanstr. 6 - Berlin 10961
-        <br />
-        -If buying clothes, size should be between 56-68 (3-6 months)
-      </div>
-      <ul>
-        {error && (
-          <div className="error">
-            Somebody just took this gift. Please refresh the page and try
-            another!
-          </div>
-        )}
-        {list.map((e) => {
-          return (
-            <form
-              key={e._id}
-              name={e._id}
-              value={e.taken}
-              onSubmit={removeGift}
-              className="giftlist"
-            >
-              {e.taken ? (
-                <li value={0} className="gift-list disable">
-                  <img alt={e.gift} src={`${e.picture}`} className="giftimg" />
-                  <div className="gift-details">
-                    <h5 className="disable giftname">{e.gift}</h5>
-                    <a href={e.link} target="_blank" rel="noreferrer noopener">
-                      Shop link{" "}
-                      <img className="shopIcon" src=".\cart-icon.png" />
-                    </a>
-                  </div>
-                  <button value={e._id} type="submit" disabled>
-                    Taken
-                  </button>
-                </li>
-              ) : (
-                <li value={1} className="gift-list activelist">
-                  <img alt={e.gift} src={e.picture} className="giftimg" />
-                  <div className="gift-details">
-                    <h5 className="giftname">{e.gift}</h5>
-                    <a rel="noreferrer noopener" href={e.link} target="_blank">
-                      Shop link{" "}
-                      <img className="shopIcon" src=".\cart-icon.png" />
-                    </a>
-                  </div>
-                  <button type="submit">I’m taking this!</button>
-                </li>
-              )}
-            </form>
-          );
-        })}
-      </ul>
+      
+      <iframe src="https://lista.lavembebe.com.br/t8f9bi" width="100%" height="100%"/>
     </div>
   );
 }

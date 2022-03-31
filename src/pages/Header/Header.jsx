@@ -6,29 +6,29 @@ export default function Header(props) {
     <div className="header">
       <div>
         <p>
-          Baby Liam is coming, and we will be very happy to celebrate this
-          moment with our friends at his baby shower.
+          Queridos amigos,
           <br />
           <br />
-          April 9th
-          <br />
-          3 pm - 5 pm
-          <br />
-          Urbanstr. 6 - courtyard (to be confirmed)
+          O Liam está chegando, e queremos compartilhar este momento especial
+          com vocês.
           <br />
           <br />
-          We hope to see you there!
+         <b> CHÁ DE BEBÊ VIRTUAL</b>
+          <br />
+          Domingo, 10 de Abril
+          <br /> 11:00 (BRT)
+          <br /> <br />
+          Zoom: <a target={"_blank"} href="https://us05web.zoom.us/j/2884854644?pwd=Y0R4aUQ3VmRCN1kvV3g0YTdyZmUwQT09
+">Link</a>
           <br />
           <br />
-          Gi and Sil
+          Confirme sua presença e escreva uma mensagem para o Liam abaixo.
+          <br />
+          A lista de presentes está disponível no link acima.
           <br />
           <br />
           <br />
-          Please RSVP below.
-          <br />
-          Baby gift registry available at the <b>Gifts</b> tab above.
-          <br />
-          Easy and quick way to do a Schnelltest before you come: Testzentrum Urbanstr. 1
+          Gi & Sil
         </p>
       </div>
 
