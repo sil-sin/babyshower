@@ -40,7 +40,7 @@ export default function Gift() {
             });
           })
           .catch((err) => {
-            setError(true);
+            next(err);
             console.log(err);
           });
       } else {
@@ -56,7 +56,7 @@ export default function Gift() {
             });
           })
           .catch((err) => {
-            setError(true);
+            next(err);
             console.log(err);
           });
       }
