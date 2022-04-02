@@ -5,19 +5,15 @@ import LoadingComponent from "../../components/Loading";
 export default function Gift() {
   const [list, setList] = useState([]);
   const [fetchin, setFetching] = useState(true);
-  const [error, setError] = useState(false);
-  const [isTaken, setIsTaken] = useState(false);
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/gifts-list`)
       .then((result) => {
-        console.log(isTaken);
         setList(result.data);
         setFetching(false);
         axios
           .get(`${process.env.REACT_APP_SERVER_URL}/taken`)
           .then((result) => {
-            setIsTaken(result.data);
             setFetching(false);
           });
       })
@@ -31,9 +27,6 @@ export default function Gift() {
 
     let _id = event.target.name;
     let value = event.target.children[0].value;
-    if (isTaken) {
-      setError(true);
-    } else {
       if (value === 0) {
         axios
           .post(`${process.env.REACT_APP_SERVER_URL}/taken`, {
@@ -67,7 +60,6 @@ export default function Gift() {
             console.log(err);
           });
       }
-    }
   };
   if (fetchin) {
     <LoadingComponent />;
@@ -98,12 +90,6 @@ export default function Gift() {
         -If buying clothes, size should be between 56-68 (3-6 months)
       </div>
       <ul>
-        {error && (
-          <div className="error">
-            Somebody just took this gift. Please refresh the page and try
-            another!
-          </div>
-        )}
         {list.map((e) => {
           return (
             <form
