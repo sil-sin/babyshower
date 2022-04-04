@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 export default function Header(props) {
@@ -18,13 +19,19 @@ export default function Header(props) {
           Domingo, 10 de Abril
           <br /> 11:00 (BRT)
           <br /> <br />
-          Zoom: <a target={"_blank"} href="https://us05web.zoom.us/j/2884854644?pwd=Y0R4aUQ3VmRCN1kvV3g0YTdyZmUwQT09
-">Link</a>
+         Clique aqui para abrir o Zoom no dia e horário do evento
+         <a  target={"_blank"} href="https://us05web.zoom.us/j/2884854644?pwd=Y0R4aUQ3VmRCN1kvV3g0YTdyZmUwQT09
+">
+         <button style={{"margin":"0 10px"}}>
+
+          Zoom
+          </button> 
+          </a>
           <br />
           <br />
           Confirme sua presença e escreva uma mensagem para o Liam abaixo.
           <br />
-          A lista de presentes está disponível no link acima.
+          Clique aqui se quiser contribuir para o enxoval do bebê <Link to={"/gifts-list"}> <button style={{"margin":"5px 10px"}}>Presentes</button></Link>
           <br />
           <br />
           <br />
