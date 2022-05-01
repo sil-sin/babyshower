@@ -45,11 +45,11 @@ export default function Wishes() {
         <label for="name">Your name </label>
         <input type="text" name="name" id="name" placeholder="Your name here" />
         <label for="message">Your message to Liam</label>
-        <input
+        <textarea
           type="text"
           name="message"
           id="message"
-          placeholder="What do you wish for Liam"
+          placeholder="Your message to Liam *"
         />
         <button type="submit">Post</button>
         {error && <div id="error">Please fill all the fields!</div>}

@@ -1,4 +1,5 @@
 import React from "react";
+import Prediction from "../../components/Prediciton/Prediction";
 import Header from "../Header/Header";
 import Rsvp from "../Rsvp/Rsvp";
 import Wishes from "../Wishes/Wishes";
@@ -7,8 +8,9 @@ export default function Home(props) {
     <div className="homepage">
       <Header />
      <div className="section">
-     <Rsvp />
+     <Prediction/>
      <Wishes/>
+     
      </div>
     </div>
   );
