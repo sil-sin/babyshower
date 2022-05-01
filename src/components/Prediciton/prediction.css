@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
     width: 50vh;
     min-width: 300px;
     background: linear-gradient(45deg, #fcfcfc, #efc6ff, #aed9e9, #d3faf1);
@@ -13,6 +12,7 @@
     border: thin;
     border-radius: 10px;
     box-shadow: rgba(144, 144, 224, 0.425) 2px 2px 20px, rgba(144, 144, 224, 0.384) 10px -10px 10px;
+    height:max-content
 
 }
 .predictionList{
