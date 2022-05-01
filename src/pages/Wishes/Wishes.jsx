@@ -10,7 +10,6 @@ export default function Wishes() {
     axios
       .get(`${config.API_URL}/wishes`)
       .then((result) => {
-        console.log(result.data);
         setWishes(result.data);
       })
       .catch((err) => {
@@ -21,15 +20,22 @@ export default function Wishes() {
   const postWish = (e) => {
     e.preventDefault();
     let message = e.target.message.value;
+    if (e.key == 13) {
+      e.preventDefault();
+      return false;
+    }
     let name = e.target.name.value;
     if (!message || !name) {
       upError(true);
+      setTimeout(() => {
+        upError(false);
+      }, 10000);
     } else {
       axios
         .post(`${config.API_URL}/wishes`, { name, message })
         .then((result) => {
           console.log("success");
-          upError(false)
+          upError(false);
           window.location.reload(true);
         })
         .catch((err) => {
@@ -42,10 +48,14 @@ export default function Wishes() {
     <div className="wishes">
       <h3>Wishes for baby Liam</h3>
       <form onSubmit={postWish} className="post-form" method="post">
-        <label for="name">Nome<i>*</i> </label>
+        <label for="name">
+          Nome<i>*</i>
+        </label>
         <input type="text" name="name" id="name" placeholder="Nome*" />
-        <label for="message">Sua mensagem para o Liam<i>*</i></label>
-        <input
+        <label for="message">
+          Sua mensagem para o Liam<i>*</i>
+        </label>
+        <textarea
           type="text"
           name="message"
           id="message"
