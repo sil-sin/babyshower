@@ -19,6 +19,8 @@ button.button__submit {
 ::placeholder{
  color:  rgb(60, 135, 138);
  font-size: small;
+ font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 .signup__form{
   background-color: whitesmoke;
