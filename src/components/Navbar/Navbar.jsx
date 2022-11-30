@@ -11,7 +11,7 @@ const Navbar = (props) => {
       </Link>
       <img className="llamaimg" src="./llama.png" alt="llama" />
       
-        {props.user && (
+       
           <>
             <Link to={PATHS.GIFTS} className="navLink">
               Gifts
@@ -20,7 +20,7 @@ const Navbar = (props) => {
               Logout
             </Link>
           </>
-        ) }
+        
    
     </nav>
   );
